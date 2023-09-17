@@ -3,48 +3,6 @@ package ru.mirea.lab4.ex3;
 import java.util.Scanner;
 
 public class Shop {
-    public static class Product {
-        String nameProduct;
-        double cost, rating;
-
-        Product(String nameProduct, double cost, double rating) {
-            this.nameProduct = nameProduct;
-            this.cost = cost;
-            this.rating = rating;
-        }
-    }
-
-    public static class Category {
-        String nameCategory;
-        Product[] products;
-
-        Category(String nameCategory, Product[] products) {
-            this.nameCategory = nameCategory;
-            this.products = products;
-        }
-    }
-
-    public static class Basket {
-        Product[] purchased;
-
-        Basket(Product[] purchased) {
-            this.purchased = purchased;
-        }
-    }
-
-    public static class User {
-        public User(String login, String password) {
-            this.login = login;
-            this.password = password;
-        }
-        public String login, password;
-        public Basket purchased;
-
-        boolean isAuth(String login, String password) {
-            if(this.login == login && this.password == password) return true;
-            else return false;
-        }
-    }
 
     public static void getMenu() {
         System.out.println("\n Меню");
@@ -78,12 +36,10 @@ public class Shop {
         System.out.println("Товарный чек");
         for(int i = 0; i < client.purchased.purchased.length; ++i) {
             if(client.purchased.purchased[i] == null) break;
-            System.out.println((i+1) + ". " + client.purchased.purchased[i].nameProduct + " ------- "
-                    + client.purchased.purchased[i].cost + " ------- " + client.purchased.purchased[i].rating);
+            System.out.println((i+1) + ". " + client.purchased.purchased[i].nameProduct + " ------- ");
         }
         double gc = getCash(client.purchased.purchased);
         System.out.print("Общая сумма покупок составляет -------" + gc);
-
     }
     public static double getCash(Product[] p) {
         double cash = 0.0;
@@ -106,7 +62,7 @@ public class Shop {
         for(int i = 0; i < b.length; ++i) {
             if(b[i] == null) break;
             System.out.println((i+1) + ". " + b[i].nameProduct + " ------- "
-                    + b[i].cost + " ------- " + b[i].rating);
+                    + b[i].cost + " ------- ");
         }
         System.out.println("0.Назад");
         Scanner sc = new Scanner(System.in);
@@ -117,7 +73,7 @@ public class Shop {
     public static void seeProduct(Category cat) {
         for(int i = 0; i < cat.products.length; ++i) {
             System.out.println((i+1) + ". " + cat.products[i].nameProduct + " ------- "
-                    + cat.products[i].cost + " ------- " + cat.products[i].rating);
+                    + cat.products[i].cost + " ------- ");
         }
         System.out.println("0.Назад");
         Scanner sc = new Scanner(System.in);
@@ -144,19 +100,19 @@ public class Shop {
         getCategory(all);
     }
 
-    static Product bread = new Product("Хлеб", 34.0, 4.3);
-    static Product buscuit = new Product("Бисквит", 60.0, 5.0);
-    static Product cookies = new Product("Печеньки", 75.0, 4.9);
+    static Product sneakers = new Product("Кроссовки", 5000.0);
+    static Product boots = new Product("Ботинки", 6000.0);
+    static Product slippers = new Product("Тапки", 2500.0);
 
-    static Product milk = new Product("Молоко", 123.0, 4.3);
-    static Product kefir = new Product("Кефир", 86.0, 4.2);
-    static Product curd = new Product("Творог", 75.0, 5.0);
+    static Product windbreaker = new Product("Ветровка", 7000.0);
+    static Product jacket = new Product("Кофта", 5000.0);
+    static Product tshirt = new Product("Футболка", 1500.0);
 
-    static Product[] Bakery = { bread, buscuit, cookies };
-    static Product[] Diary = { milk, kefir, curd };
+    static Product[] Footwear = { sneakers, boots, slippers };
+    static Product[] outerwear = { windbreaker, jacket, tshirt };
 
-    static Category bakery = new Category("Хлебобулочные изделия", Bakery);
-    static Category diary = new Category("Молочные изделия", Diary);
+    static Category bakery = new Category("Обувь", Footwear);
+    static Category diary = new Category("Верхняя одежда", outerwear);
 
     static Category[] all = { bakery, diary };
     static Product[] card;

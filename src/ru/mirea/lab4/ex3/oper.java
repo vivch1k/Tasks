@@ -6,6 +6,4 @@ public enum oper {
     VIEWINGDIR,
     CHOICE,
     BUY
-
-
 }
