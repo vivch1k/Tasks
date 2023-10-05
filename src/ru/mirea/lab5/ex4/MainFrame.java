@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
 
     private MainFrame(){
         this.setSize(500, 500);
-        imgLabel = new JLabel("", new ImageIcon(getClass().getResource("1.jpeg")), SwingConstants.CENTER);
+        imgLabel = new JLabel("", new ImageIcon(getClass().getResource("1.jpg")), SwingConstants.CENTER);
 
         getContentPane().add(imgLabel);
 
@@ -23,7 +23,7 @@ public class MainFrame extends JFrame {
         timer.start();
     }
     private void nextImg(){
-        imgLabel.setIcon(new ImageIcon(getClass().getResource((++imgNum)+".jpeg")));
+        imgLabel.setIcon(new ImageIcon(getClass().getResource((++imgNum)+".jpg")));
         if(imgNum == 3) imgNum = 0;
 
     }

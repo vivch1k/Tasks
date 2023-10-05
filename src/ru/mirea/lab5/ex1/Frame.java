@@ -71,4 +71,11 @@ public class Frame extends JFrame implements ActionListener {
                 label3.setText("Winner: " + winner);
         }
     }
+
+
+
+    public static void main(String[] args) {
+
+        new Frame();
+    }
 }
