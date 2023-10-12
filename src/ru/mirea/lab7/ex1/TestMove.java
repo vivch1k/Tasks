@@ -1,0 +1,14 @@
+package ru.mirea.lab7.ex1;
+
+
+
+public class TestMove {
+    public static void main(String[] args) {
+        MovableRectangle m3 = new MovableRectangle(10, 10, 50, 30, 5, 7);
+        System.out.println("\n" + m3.toString());
+        m3.moveUp();
+        System.out.println(m3.toString());
+        m3.moveLeft();
+        System.out.println(m3.toString());
+    }
+}

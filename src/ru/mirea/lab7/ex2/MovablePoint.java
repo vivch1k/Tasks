@@ -1,12 +1,12 @@
-package ru.mirea.lab6.ex2;
+package ru.mirea.lab7.ex2;
 
 import ru.mirea.lab6.ex2.Movable;
 
 public class MovablePoint implements Movable {
-    public int x;
-    public int y;
-    public int xSpeed;
-    public int ySpeed;
+    protected int x;
+    protected int y;
+    protected int xSpeed;
+    protected int ySpeed;
 
     public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
         this.x = x;
